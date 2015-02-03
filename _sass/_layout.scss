@@ -458,11 +458,27 @@
             min-height:0;   
             margin-bottom:0;  
         }
-    .main-nav,
-    .search-main{
-        display:none;
+    .main-nav{
+        display: inline;
+        text-align:center;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        ul li{
+            display:inline-block;
+            background-color:#fff;
+            padding:5px;
+            a{
+                white-space:nowrap;
+            
+            }
+        }
     }
     .search{
+        width:100%;
+        float:none;
+    }
+    .search input[type="search"]{
         width:90%;
     }
     .site-header{

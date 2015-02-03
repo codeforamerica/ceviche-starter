@@ -25,3 +25,7 @@ navigation:
 - utilities-streets: "Utilities &amp; Streets"
 - transport: "Transport"
 - parks-recreation: "Parks &amp; Recreation"
+government:
+- "departments": "Departments"
+transport:
+- "parking": "Parking"
