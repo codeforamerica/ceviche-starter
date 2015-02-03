@@ -9,13 +9,11 @@
     </div>
     <nav class="main-nav">
     	<ul>
-    		<li><a href="/government">Government</a></li>
-    		<li><a href="/jobs">Jobs</a></li>
-    		<li><a href="/public-safety">Public Safety</a></li>
-    		<li><a href="">Licensing &amp; Permits</a></li>
-    		<li><a href="">Utilities &amp; Streets</a></li>
-    		<li><a href="/transport">Transport</a></li>
-            <li><a href="">Parks &amp; Recreation</a></li>
+            {% for navigation_hash in site.navigation %}
+                {% for navigation in navigation_hash %}
+                    <li><a href="/{{ navigation[0] }}">{{ navigation[1] }}</a></li>
+                {% endfor %}
+            {% endfor %}
     	</ul>
     </nav>
   </div>
