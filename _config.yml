@@ -18,6 +18,8 @@ languages:
 - en: English
 - zh-cn: Chinese
 - es: Spanish
+# IA settings
+# top level nav
 navigation:
 - government: "Government"
 - jobs: "Jobs"
@@ -26,7 +28,28 @@ navigation:
 - utilities-streets: "Utilities &amp; Streets"
 - transport: "Transport"
 - parks-recreation: "Parks &amp; Recreation"
+# second level nav
 government:
 - "departments": "Departments"
 transport:
 - "parking": "Parking"
+# top level departments nav
+departments:
+- "office-mayor": "Office of the Mayor"
+- "city-administrator": "City Administrator’s Office"
+- "city-clerk": "City Clerk"
+- "community-economic-development": "Community and Economic Development"
+- "finance": "Finance"
+- "fire-department": "Fire Department"
+- "housing-community-development": "Housing &amp; Community Development"
+- "human-resources-management": "Human Resources Management"
+- "human-services": "Human Services"
+- "information-technology": "Information Technology"
+- "parks-recreation": "Parks &amp; Recreation<"
+- "planning-building": "Planning &amp; Building"
+- "police-department": "Police Department"
+- "public-library": "Public Library"
+- "public-works": "Public Works"
+- "city-council": "City Council"
+- "city-attorney": "City Attorney"
+- "City Auditor": "City Auditor"
