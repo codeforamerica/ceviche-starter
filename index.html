@@ -82,10 +82,8 @@ layout: default
     <!-- generate department links -->
     <h1>City departments</h1>
     <ul>
-      {% for department_hash in site.data.departments %}
-        {% for department in department_hash %}
-          <li><a href="/{{ department[0] }}">{{ department[1] }}</a></li>
-        {% endfor %}
+      {% for department in site.data.departments.toplevel %}
+          <li><a href="/{{ department.url }}">{{ department.name }}</a></li>
       {% endfor %}
     </ul>
   </section>
