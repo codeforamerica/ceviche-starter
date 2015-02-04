@@ -20,7 +20,7 @@ layout: default
           </ul>
         </li>
         <!-- generate topic links -->
-        <li><h2><a href="">Government</a></h2>
+        <!--li><h2><a href="">Government</a></h2>
           <p>City <a href="">Departments</a> and <a href="">council members</a> &amp; <a href="">meetings</a> and <a href="">history</a></p>
           <p class="view-more"><a href="">Browse Government</a></p>
         </li>
@@ -47,8 +47,16 @@ layout: default
         <li><h2><a href="">Parks &amp; Recreation</a></h2>
               <p>Includes city provided <a href="">outdoor activities</a>, <a href="">attractions</a> and <a href="">entertainment</a></p>
               <p class="view-more"><a href="">Browse Parks &amp; Recreation</a></p>
-          </li>
+          </li-->
         
+      {% for navigation_hash in site.navigation %}
+        {% for navigation in navigation_hash %}
+          <li><a href="/{{ navigation[0] }}">{{ navigation[1] }}</a>
+            <p>Section description needs defining here</p>
+            <p class="view-more"><a href="/{{ navigation[0] }}">Browse {{ navigation[1] }}</a></p>
+          </li>
+        {% endfor %}
+      {% endfor %}
       </ul>
       
           
@@ -56,8 +64,8 @@ layout: default
       </ul>
   </section>
 
-  <section class="main-section">
-    <!-- generate news links -->
+  <!--section class="main-section">
+ 
     <h1>Community news</h1>
     <ul>
       <li><h2><a href="">City of Oakland Issues RFP for Sale of Key Parcel in the Thriving Uptown District</a></h2>
@@ -70,7 +78,7 @@ layout: default
         <p>The City of Oakland has released a Request for Proposals to sell a City-owned parcel in downtown Oakland to a qualified development team to design and develop a mixed-used project.</p>
         <p class="view-more"><a href="">Read full story</a></p></li>
     </ul>
-  </section>
+  </section-->
   
   <section class="main-section">
     <!-- generate department links -->
