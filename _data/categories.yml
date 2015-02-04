@@ -3,25 +3,25 @@
 toplevel:
 - url: government
   name: "Government"
-  description: "Blah blah"
+  description: "City Departments and council members & meetings and history"
 - url: jobs
   name: "Jobs"
-  description: "Blah blah"
+  description: "Finding jobs with the City of Oakland and general employment services"
 - url: public-safety
   name: "Public Safety"
-  description: "Blah blah"
+  description: "Includes emergency prepardness and safety advice and crime"
 - url: licensing-permits
   name: "Licensing &amp; Permits"
-  description: "Blah blah"
+  description: "Includes applications for building permits and zoning code"
 - url: utilities-streets
   name: "Utilities &amp; Streets"
-  description: "Blah blah"
+  description: "Including bill payments, reporting issues and disputes"
 - url: transport
   name: "Transport"
-  description: "Blah blah"
+  description: "Including public transport, parking and citations"
 - url: parks-recreation
   name: "Parks &amp; Recreation"
-  description: "Blah blah"
+  description: "Includes city provided outdoor activities, attractions and entertainment"
 
 
 # second level nav
