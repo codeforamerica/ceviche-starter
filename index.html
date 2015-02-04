@@ -76,24 +76,11 @@ layout: default
     <!-- generate department links -->
     <h1>City departments</h1>
     <ul>
-      <li><h2><a href="">Office of the Mayor</a></h2></li>
-      <li><h2><a href="">City Administrator’s Office</a></h2></li>
-      <li><h2><a href="">City Clerk</a></h2></li>
-      <li><h2><a href="">Community and Economic Development</a></h2></li>
-      <li><h2><a href="">Finance</a></h2></li>
-      <li><h2><a href="">Fire Department</a></h2></li>
-      <li><h2><a href="">Housing &amp; Community Development</a></h2></li>
-      <li><h2><a href="">Human Resources Management</a></h2></li>
-      <li><h2><a href="">Human Services</a></h2></li>
-      <li><h2><a href="">Information Technology</a></h2></li>
-      <li><h2><a href="">Parks &amp; Recreation</a></h2></li>
-      <li><h2><a href="">Planning &amp; Building</a></h2></li>
-      <li><h2><a href="">Police Department</a></h2></li>
-      <li><h2><a href="">Public Library</a></h2></li>
-      <li><h2><a href="">Public Works</a></h2></li>
-      <li><h2><a href="">City Council</a></h2></li>
-      <li><h2><a href="">City Attorney</a></h2></li>
-      <li><h2><a href="">City Auditor</a></h2></li>
+      {% for department_hash in site.departments %}
+        {% for department in department_hash %}
+          <li><a href="/{{ department[0] }}">{{ department[1] }}</a></li>
+        {% endfor %}
+      {% endfor %}
     </ul>
   </section>
 
