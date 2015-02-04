@@ -5,7 +5,10 @@
     <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
 
     <div class="search">
-      <input type="search" placeholder="pay parking ticket" /><input type="submit" value="Search" />
+        <form class="search-global" id="search-global" action="https://www.google.com/search" method="get" role="search">
+            <input type="hidden" name="as_sitesearch" value="{{site.domain}}" />
+            <input type="search" placeholder="pay parking ticket" /><input type="submit" value="Search" type="submit" />
+        </form>
     </div>
     <nav class="main-nav">
     	<ul>
