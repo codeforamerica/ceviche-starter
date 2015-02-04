@@ -49,7 +49,7 @@ layout: default
               <p class="view-more"><a href="">Browse Parks &amp; Recreation</a></p>
           </li-->
         
-      {% for navigation_hash in site.navigation %}
+      {% for navigation_hash in site.data.categories.toplevel %}
         {% for navigation in navigation_hash %}
           <li><a href="/{{ navigation[0] }}">{{ navigation[1] }}</a>
             <p>Section description needs defining here</p>

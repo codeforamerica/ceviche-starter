@@ -4,8 +4,7 @@ section: "transport"
 title:  "Transport"
 ---
 
-
-{% for subnavigation_hash in site.[{{page.section}}] %}
+{% for subnavigation_hash in site.data.categories.[{{page.section}}] %}
   {% for subnavigation in subnavigation_hash %}
     
 ## [{{ subnavigation[1] }}](/{{page.section}}/{{subnavigation[0]}})

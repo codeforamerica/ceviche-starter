@@ -1,0 +1,15 @@
+# IA settings
+# top level nav
+toplevel:
+- government: "Government"
+- jobs: "Jobs"
+- public-safety: "Public Safety"
+- licensing-permits: "Licensing &amp; Permits"
+- utilities-streets: "Utilities &amp; Streets"
+- transport: "Transport"
+- parks-recreation: "Parks &amp; Recreation"
+# second level nav
+government:
+- "departments": "Departments"
+transport:
+- "parking": "Parking"
