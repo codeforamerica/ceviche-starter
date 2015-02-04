@@ -1,13 +1,29 @@
 # IA settings
 # top level nav
 toplevel:
-- government: "Government"
-- jobs: "Jobs"
-- public-safety: "Public Safety"
-- licensing-permits: "Licensing &amp; Permits"
-- utilities-streets: "Utilities &amp; Streets"
-- transport: "Transport"
-- parks-recreation: "Parks &amp; Recreation"
+- url: government
+  name: "Government"
+  description: "Blah blah"
+- url: jobs
+  name: "Jobs"
+  description: "Blah blah"
+- url: public-safety
+  name: "Public Safety"
+  description: "Blah blah"
+- url: licensing-permits
+  name: "Licensing &amp; Permits"
+  description: "Blah blah"
+- url: utilities-streets
+  name: "Utilities &amp; Streets"
+  description: "Blah blah"
+- url: transport
+  name: "Transport"
+  description: "Blah blah"
+- url: parks-recreation
+  name: "Parks &amp; Recreation"
+  description: "Blah blah"
+
+
 # second level nav
 government:
 - "departments": "Departments"

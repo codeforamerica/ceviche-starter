@@ -12,11 +12,12 @@
     </div>
     <nav class="main-nav">
     	<ul>
-            {% for navigation_hash in site.data.categories.toplevel %}
-                {% for navigation in navigation_hash %}
-                    <li><a href="/{{ navigation[0] }}">{{ navigation[1] }}</a></li>
-                {% endfor %}
+            {% for nav in site.data.categories.toplevel %}
+                <li><a href="/{{ nav.url }}">{{ nav.name }}</a></li>
+                {{}}
             {% endfor %}
+
+            
     	</ul>
     </nav>
   </div>
