@@ -1,5 +1,11 @@
+/** Vanilla Chime Pattern library 
+ *  v1.0 March 2015
+ */
+
 /**
- * Site header
+ * Component: Site header
+ * HTML: <header class="site-header"><h1><a href="#">Title</a></h1></header>
+ * Description: Defines the header area and houses top level information, like title and global search
  */
 .site-header {
     /*border-bottom: 1px solid #3ab344;*/
@@ -8,21 +14,38 @@
     // Positioning context for the mobile navigation icon
     position: relative;
     padding-bottom:1em;
-}
+    
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
 
-.site-title {
-    font-size: 26px;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(800px - (#{$spacing-unit}));
+        max-width:         calc(800px - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+    h1{
+        font-size: 26px;
+        line-height: 56px;
+        letter-spacing: -1px;
+        margin-bottom: 0;
+        float: left;
 
-    &,
-    &:visited {
-        color: $grey-color-dark;
+        &,
+        &:visited {
+            color: $grey-color-dark;
+        }
     }
 }
 
+/**
+ * Component: Site global nav
+ * HTML: <nav class="main-nav"><ul><li><a href="#">link</a></li></ul></nav>
+ * Description: Used to define the top level navigation, generally used inside the Site header component
+ */
 .site-nav {
     float: right;
     line-height: 56px;
@@ -90,22 +113,33 @@
 
 
 /**
- * Site footer
+ * Component: Site global footer
+ * HTML: <footer class="site-footer">[content]</footer>
+ * Description: Used to define the footer area
  */
 .site-footer {
     border-top: 3px solid #31660f;
     padding: $spacing-unit 0;
-    /** padding-top:300px; **/
     background-color:#3ab344;
-    /** background-image:url("media/oakland-logo.png");
     background-repeat:no-repeat;
-    background-position:center 20px; **/
+    background-position:center 20px;
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
+/**
+ * Component: Call to action
+ * HTML: <p class="cta">Some text usually with a <a href="#">link</a> in it</p>
+ * Description: Used to call out a specific piece of information that's most pertinent to the user
+ */
+.cta{
+    background-color:#e1ffbf;
+    font-weight:bold;
+    padding:1em;
+    font-size:24px;
+    a{
+        text-decoration:underline;
+    }
 }
+
 
 .contact-list,
 .social-media-list {
@@ -438,15 +472,6 @@
     }
 }
 
-.cta{
-    background-color:#e1ffbf;
-    font-weight:bold;
-    padding:1em;
-    font-size:24px;
-    a{
-        text-decoration:underline;
-    }
-}
 
 /* Smushing the layout a bit for small screens */
 @include media-query($on-palm){
