@@ -3,14 +3,15 @@ module Languages
     def generate(site)
       print 'start with ', site.pages.length, " pages.\n"
       
-      converters = {
-        '.html' => site.getConverterImpl(Jekyll::Converters::Identity)
-        }
+      # Prepare a mapping from file name extensions to converters
+      default_converter = site.getConverterImpl(Jekyll::Converters::Identity)
+      converters = { }
     
       site.config['markdown_ext'].split(',').each do |ext|
-        converters['.' + ext] = Jekyll::Converters::Markdown
+        key = '.' + ext
+        converters[key] = site.getConverterImpl(Jekyll::Converters::Markdown)
       end
-
+      
       old_pages = site.pages.dup()
       old_pages.each do |old_page|
       
@@ -19,7 +20,7 @@ module Languages
           next
         end
         
-        converter = converters[old_page.ext.downcase()]
+        converter = converters.fetch(old_page.ext.downcase(), default_converter)
       
         # Delete the initial page.
         print 'replace ' + old_page.path + ' --'
@@ -41,7 +42,9 @@ module Languages
           # For languages other than English, move the title and content.
           if iso_code != 'en'
             new_page1.data['title'] = old_page.data['title-' + iso_code]
-            new_page1.content = converter.convert(old_page.data['body-' + iso_code])
+            new_page1.content = converter.convert(old_page.data['body-' + iso_code] || '')
+          else
+            new_page1.content = converter.convert(old_page.content)
           end
           
           site.pages << new_page1
