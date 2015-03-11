@@ -49,33 +49,12 @@ module Languages
           
           site.pages << new_page1
           print ' ' + new_page1.name
-
-          if false
-            new_page2 = old_page.clone()
-          
-            #
-            new_page2.dir = iso_code + '/' + old_page.dir
-            new_page2.process(new_page2.name)
-
-            new_page2.data = old_page.data.clone()
-            new_page2.data['language'] = language
-          
-            # For languages other than English, move the title and content.
-            if iso_code != 'en'
-              new_page2.data['title'] = old_page.data['title-' + iso_code]
-              new_page2.content = old_page.data['body-' + iso_code]
-            end
-
-            site.pages << new_page2
-            print ' ' + new_page1.name
-          end
         end
         
         print "\n"
       end
 
       print 'end with ', site.pages.length, " pages.\n"
-      
     end
   end
 end
