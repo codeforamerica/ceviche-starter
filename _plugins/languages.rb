@@ -3,6 +3,14 @@ module Languages
     def generate(site)
       print 'start with ', site.pages.length, " pages.\n"
       
+      converters = {
+        '.html' => site.getConverterImpl(Jekyll::Converters::Identity)
+        }
+    
+      site.config['markdown_ext'].split(',').each do |ext|
+        converters['.' + ext] = Jekyll::Converters::Markdown
+      end
+
       old_pages = site.pages.dup()
       old_pages.each do |old_page|
       
@@ -10,10 +18,12 @@ module Languages
           # Skip anything that doesn't have a layout.
           next
         end
+        
+        converter = converters[old_page.ext.downcase()]
       
         # Delete the initial page.
         print 'replace ' + old_page.path + ' --'
-        #site.pages.delete(old_page)
+        site.pages.delete(old_page)
         
         site.config['languages'].each do |lang|
           iso_code = lang.keys[0]
@@ -22,16 +32,16 @@ module Languages
           
           # Assign a name like base.language.extension, compatible with Apache:
           # http://httpd.apache.org/docs/2.2/content-negotiation.html#naming
-          new_page1.name = old_page.basename + '.' + iso_code + old_page.ext
+          new_page1.name = old_page.basename + old_page.ext + '.' + iso_code
           new_page1.process(new_page1.name)
-
+          
           new_page1.data = old_page.data.clone()
           new_page1.data['language'] = language
           
           # For languages other than English, move the title and content.
           if iso_code != 'en'
             new_page1.data['title'] = old_page.data['title-' + iso_code]
-            new_page1.content = old_page.data['body-' + iso_code]
+            new_page1.content = converter.convert(old_page.data['body-' + iso_code])
           end
           
           site.pages << new_page1
