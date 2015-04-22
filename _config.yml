@@ -13,10 +13,10 @@ permalink: /:categories/:title/
 # Build settings
 markdown: kramdown
 include: ['.htaccess']
-languages:
-- en: English
-- zh-cn: Chinese
-- es: Spanish
+# languages:
+# - en: English
+# - zh-cn: Chinese
+# - es: Spanish
 
 
 
