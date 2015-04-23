@@ -25,6 +25,9 @@ toplevel:
 - url: parks-recreation
   name: "Parks &amp; Recreation"
   description: "Includes city provided outdoor activities, attractions and entertainment"
+- url: events
+  name: "Events"
+  description: "Includes all city sponsored events"
 
 
 # second level nav
